@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RawSacredBlends – Hapé Ceremonial Shop</title>
+  <meta name="description" content="RawSacredBlends offers respectful, ceremonially oriented hapé blends inspired by South American traditions. Contains tobacco; for adults only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+  <!-- Age Verification Modal -->
+  <div id="ageGate" class="modal" aria-hidden="true" role="dialog" aria-label="Age verification">
+    <div class="modal-content">
+      <h2>Age Verification</h2>
+      <p>
+        This site offers ceremonial blends that contain tobacco. Nicotine is addictive. You must be 21 or older (where applicable) to enter.
+      </p>
+      <div class="modal-actions">
+        <button id="ageYes" class="button primary">I am 21+</button>
+        <button id="ageNo" class="button">Exit</button>
+      </div>
+      <small class="modal-note">Please use responsibly and lawfully, honoring local traditions.</small>
+    </div>
+  </div>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <!-- Simple Chakana-inspired motif (stylized, respectful) -->
+          <rect x="45" y="5" width="10" height="20" />
+          <rect x="75" y="45" width="20" height="10" />
+          <rect x="45" y="75" width="10" height="20" />
+          <rect x="5" y="45" width="20" height="10" />
+          <circle cx="50" cy="50" r="12" />
+        </svg>
+        <span class="brand-name">RawSacredBlends</span>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#mission">Mission</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cart">
+        <button id="cartButton" aria-label="Cart">
+          <span class="cart-icon">🧺</span>
+          <span id="cartCount" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="notice" role="note">
+    <div class="container">
+      <strong>Contains tobacco.</strong> Nicotine is addictive. For adults only (21+ where applicable). Ceremonial product; not a medical treatment. Please respect local laws and traditions.
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="overlay">
+      <div class="container hero-content">
+        <h1>Hapé Blends Rooted in Rainforest Wisdom</h1>
+        <p>Handcrafted, respectfully sourced, and offered for ceremonial use.</p>
+        <a href="#shop" class="button primary">Explore Blends</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>What Is Hapé?</h2>
+          <p>
+            Hapé (also spelled rapé) is a sacred, finely ground herbal blend traditionally prepared and shared by various Indigenous communities across South America. While recipes vary by lineage, hapé commonly includes tobacco (such as Mapacho) combined with forest botanicals and ashes, and is offered in ritual contexts to support grounding, clarity, prayer, and connection.
+          </p>
+          <p>
+            At RawSacredBlends, we honor the cultural roots of hapé by emphasizing respectful sourcing, ceremonial intention, and responsible use. Our blends are crafted for ritual practice, meditation, and offerings—never as recreational or medical products.
+          </p>
+        </div>
+        <div class="image-card">
+          <img alt="Amazon rainforest canopy" src="Canopy1.jpg" />
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section alt">
+      <div class="container">
+        <h2>Benefits (Ceremonial Context)</h2>
+        <div class="benefits-list">
+          <article>
+            <h3>Grounding</h3>
+            <p>Many practitioners use hapé to center the mind and body before prayer, meditation, or song.</p>
+          </article>
+          <article>
+            <h3>Clarity</h3>
+            <p>Ritual breath and focused intention can support clear presence and mindful awareness.</p>
+          </article>
+          <article>
+            <h3>Connection</h3>
+            <p>Used within lineage-appropriate contexts, hapé may deepen relationship with the natural world and community.</p>
+          </article>
+        </div>
+        <p class="disclaimer">
+          Disclaimer: These statements describe ceremonial use and intention. They are not medical claims. Hapé is not intended to diagnose, treat, cure, or prevent any disease. Consult a qualified healthcare professional if you have health concerns. Avoid use during pregnancy or if sensitive to tobacco or smoke. Use only where legal and culturally appropriate.
+        </p>
+      </div>
+    </section>
+
+    <section id="mission" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Mission & Blessing</h2>
+          <p>
+            Our mission is to honor Mother Earth and the wisdom-keepers who steward sacred medicines. With humility and respect, we strive to amplify awareness and healing through ritual offerings, ethical sourcing, and education that centers consent, lineage, and reciprocity.
+          </p>
+          <blockquote class="blessing">
+            Blessed be Mother Earth—Pachamama—source of breath, river, and seed. May each prayer carried by these blends serve peace, balance, and right relationship. May our work, guided by integrity, bring gentle awareness and collective healing to all our relations.
+          </blockquote>
+        </div>
+        <div class="image-card">
+          <img alt="Amazon rainforest aerial view" src="1200px-Aerial_view_of_the_Amazon_Rainforest.jpg" />
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="section alt">
+      <div class="container">
+        <h2>Shop Blends</h2>
+        <div id="productGrid" class="product-grid">
+          <!-- Products are populated by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Contact & Guidance</h2>
+          <p>
+            For questions about ceremony, sourcing, or use, please reach out. We encourage learning directly from lineage-holders and participating respectfully in community practices.
+          </p>
+          <ul class="contact-list">
+            <li>Email: support@rawsacredblends.example</li>
+            <li>Instagram: @RawSacredBlends</li>
+          </ul>
+        </div>
+        <div class="image-card">
+          <img alt="Flooded rainforest area" src="AMAZON_RAINFOREST_FLOODED_ÁREA_-_panoramio.jpg" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ethical Sourcing</h4>
+          <p>We prioritize fair exchange, consent, and alignment with community guidance where offerings are appropriate.</p>
+        </div>
+        <div>
+          <h4>Sustainability</h4>
+          <p>Packaging and operations strive for low impact and regenerative practices.</p>
+        </div>
+        <div>
+          <h4>Safety & Age</h4>
+          <p>For adults only. Contains tobacco. Use responsibly and lawfully.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© <span id="year"></span> RawSacredBlends · Ceremonial offerings. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
