@@ -29,21 +29,21 @@
     {
       id: 'rainforest-grounding',
       name: 'Rainforest Grounding',
-      price: 28,
+      price: 70,
       image: 'Canopy2.jpg',
       desc: 'Earth-forward ceremonial blend for grounding prayer and clarity.'
     },
     {
       id: 'sunrise-clarity',
       name: 'Sunrise Clarity',
-      price: 32,
+      price: 85,
       image: 'Amazon.jpeg',
       desc: 'Light aromatic profile intended for breath-centered ritual focus.'
     },
     {
       id: 'river-connection',
       name: 'River Connection',
-      price: 35,
+      price: 70,
       image: '1200px-Aerial_view_of_the_Amazon_Rainforest.jpg',
       desc: 'Balanced, prayerful blend offered to deepen relationship and song.'
     }
@@ -69,7 +69,7 @@
         <div class="body">
           <h3>${p.name}</h3>
           <p>${p.desc}</p>
-          <div class="price">$${p.price.toFixed(2)}</div>
+          <div class="price">Price (10 g): $${p.price.toFixed(2)}</div>
           <div class="actions">
             <button class="add">Add to Cart</button>
             <button class="buy">Buy Now</button>
